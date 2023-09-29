@@ -8,6 +8,16 @@
 import SwiftUI
 import Foundation
 import AppKit
+import CoreText
+
+func registerCustomFont(fileName: String, withExtension fileExtension: String) {
+  guard let fontURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {
+    print("Failed to find font URL for \(fileName).\(fileExtension)")
+    return
+  }
+
+  CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+}
 
 class WindowState: ObservableObject {
   @Published var ringAction: Bool = false
@@ -17,12 +27,28 @@ class WindowState: ObservableObject {
 struct samsung_pingerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    init() {
+        registerCustomFont(fileName: "samsungsharpsans-bold", withExtension: "otf")
+        registerCustomFont(fileName: "samsungsharpsans-medium", withExtension: "otf")
+      }
+    
     var body: some Scene {
         WindowGroup {
           MainView()
         }
-        .windowResizability(.contentSize)
+//        .windowResizability(.contentSize)
+        .windowResizabilityContentSize()
       }
+}
+
+extension Scene {
+    func windowResizabilityContentSize() -> some Scene {
+        if #available(macOS 13.0, *) {
+            return windowResizability(.contentSize)
+        } else {
+            return self
+        }
+    }
 }
 
 struct MainView: View {
@@ -48,9 +74,6 @@ struct MainView: View {
             RingingView(showAlert: $showAlert, alertMessage: $alertMessage, ringState: $ringState)
                 .frame(width: 400, height: 300)
                 .fixedSize()
-//                        .onAppear {
-//                          setTitleBarVisible(false)
-//                        }
                 .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
                     for window in NSApplication.shared.windows {
                         window.standardWindowButton(.zoomButton)?.isEnabled = false
@@ -65,14 +88,16 @@ struct MainView: View {
           handle(url: url)
       }
     }
-
-    
-    private func handleNewWindow(id: UUID) {
-       // Logic to decide what to do with a new window
-     }
     
     private func handle(url: URL) {
         if url.absoluteString == "samsung-pinger-widget://ring" {
+            if (
+                UserDefaults.standard.string(forKey: "wmonID")?.isEmpty == true ||
+                UserDefaults.standard.string(forKey: "jsessionID")?.isEmpty == true ||
+                UserDefaults.standard.string(forKey: "deviceID")?.isEmpty == true
+            ) {
+                return
+            }
             
             state.ringAction = true
         }

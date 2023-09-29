@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  samsung-pinger
+
+  Created by Виктор Щелочков on 29.09.2023.
+  
+*/
+
+"settings_label" = "To be able to ping your device, this widget needs your Samsung's SmartThingsFind tokens and Device ID. This information never leaves your computer and won't be shared with anyone. You can review source code at ";
+"instructions_label" = "Don't know how to find these values?";
+"instructions_link" = "View instructions";
+"settings_field_ping_text" = "Ping text (optional):";
+"settings_field_ping_placeholder" = "Samsung Pinger is ringing this phone!";
+"saved_successfully_message" = "Saved successfully!";
+"validation_error_message" = "Validation Error";
+"required_field_error" = " is a required field. If you don't know where to find this token, please refer to instructions in README.md file on GitHub";
+"device_id_validation_error" = "Device ID must only consist of numbers";
+"ringing_view_connecting" = "Connecting...";
+"ringing_view_ringing" = "Ringing your Samsung device...";
+"error" = "Error";
+"save_button" = "Save";

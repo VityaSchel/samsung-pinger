@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         VStack(alignment: .leading) {
             VStack(alignment: .leading) {
-                Text("To be able to ping your device, this widget needs your Samsung's SmartThingsFind tokens and Device ID. This information never leaves your computer and won't be shared with anyone. You can review source code at ")
+                Text("settings_label")
                 Button(action: {}) {
                     Text("https://github.com/vityaschel/samsung-pinger").underline()
                         .foregroundColor(Color.blue)
@@ -37,14 +37,14 @@ struct ContentView: View {
             .frame(width: 370, alignment: .leading)
             .padding(.bottom, 20)
             HStack {
-                Text("Don't know how to find these values?")
+                Text("instructions_label")
                     .fontWeight(.bold)
                 Button(action: {
                     if let url = URL(string: "https://github.com/vityaschel/samsung-pinger#setup") {
                         NSWorkspace.shared.open(url)
                     }
                 }) {
-                    Text("View instructions").underline()
+                    Text("instructions_link").underline()
                         .foregroundColor(Color.blue)
                 }.buttonStyle(PlainButtonStyle())
                 .onHover { inside in
@@ -56,16 +56,16 @@ struct ContentView: View {
                 }
             }
             .padding(.bottom, 10)
-            field(title: "Ping text (optional):", placeholder: "Samsung Pinger is ringing this phone!", text: $pingText)
+            field(title: NSLocalizedString("settings_field_ping_text", comment: "Ping text (optional)"), placeholder: "settings_field_ping_placeholder", text: $pingText)
             field(title: "JSESSIONID:", text: $jsessionID)
             field(title: "WMONID:", text: $wmonID)
             field(title: "Device ID:", text: $deviceID)
             HStack {
                 Button(action: saveFields) {
-                    Text("Save")
+                    Text("save_button")
                 }
                 if showMessage {
-                    Text("Saved successfully!")
+                    Text("saved_successfully_message")
                         .fontWeight(.bold)
                         .foregroundColor(.green)
                 }
@@ -74,28 +74,28 @@ struct ContentView: View {
         .padding()
         .frame(width: 400, alignment: .leading)
         .alert(isPresented: $showAlert) {
-            Alert(title: Text("Validation Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+            Alert(title: Text("validation_error_message"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
         }
     }
     
     func saveFields() {
         if jsessionID.count == 0 {
-            alertMessage = "JSESSIONID is a required field. If you don't know where to find this token, please refer to instructions in README.md file on GitHub"
+            alertMessage = "JSESSIONID" + NSLocalizedString("required_field_error", comment: "Required field")
             showAlert = true
             return
         }
         if wmonID.count == 0 {
-            alertMessage = "WMONID is a required field. If you don't know where to find this token, please refer to instructions in README.md file on GitHub"
+            alertMessage = "WMONID" + NSLocalizedString("required_field_error", comment: "Required field")
             showAlert = true
             return
         }
         if deviceID.count == 0 {
-            alertMessage = "Device ID is a required field. If you don't know where to find this token, please refer to instructions in README.md file on GitHub"
+            alertMessage = "Device ID" + NSLocalizedString("required_field_error", comment: "Required field")
             showAlert = true
             return
         }
         if !NSPredicate(format: "SELF MATCHES %@", "^[0-9]+$").evaluate(with: deviceID) {
-            alertMessage = "Device ID must only consist of numbers"
+            alertMessage = NSLocalizedString("device_id_validation_error", comment: "Device ID must only consist of numbers")
             showAlert = true
             return
         }

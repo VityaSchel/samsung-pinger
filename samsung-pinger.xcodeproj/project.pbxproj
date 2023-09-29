@@ -23,8 +23,10 @@
 		A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
 		A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
 		A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
-		A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
-		A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
+		A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in Copy Files */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
+		A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in Copy Files */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
+		A76669EC2AC7317E005FE393 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76669EF2AC7317E005FE393 /* Localizable.strings */; };
+		A76669ED2AC7317E005FE393 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76669EF2AC7317E005FE393 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,15 +51,16 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A74393B52AC6CDBF000A5682 /* CopyFiles */ = {
+		A74393B52AC6CDBF000A5682 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
-				A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in CopyFiles */,
-				A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in CopyFiles */,
+				A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in Copy Files */,
+				A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -81,6 +84,8 @@
 		A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-bold.otf"; sourceTree = "<group>"; };
 		A74393B02AC6CAEF000A5682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-medium.otf"; sourceTree = "<group>"; };
+		A76669EE2AC7317E005FE393 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A76669F02AC73184005FE393 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +111,7 @@
 		A714E6662AC5CE85006C139D = {
 			isa = PBXGroup;
 			children = (
-				A74393AA2AC6C43E000A5682 /* Shared */,
+				A76669EA2AC73083005FE393 /* Shared */,
 				A714E6712AC5CE86006C139D /* samsung-pinger */,
 				A714E68B2AC5CF7D006C139D /* widget */,
 				A714E6862AC5CF7D006C139D /* Frameworks */,
@@ -131,6 +136,7 @@
 				A714E6742AC5CE86006C139D /* ContentView.swift */,
 				A74393A52AC6C174000A5682 /* RingingView.swift */,
 				A714E6762AC5CE87006C139D /* Assets.xcassets */,
+				A74393AB2AC6C443000A5682 /* fonts */,
 				A714E67B2AC5CE87006C139D /* samsung_pinger.entitlements */,
 				A714E6782AC5CE87006C139D /* Preview Content */,
 			);
@@ -166,14 +172,6 @@
 			path = widget;
 			sourceTree = "<group>";
 		};
-		A74393AA2AC6C43E000A5682 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				A74393AB2AC6C443000A5682 /* fonts */,
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		A74393AB2AC6C443000A5682 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +179,14 @@
 				A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		A76669EA2AC73083005FE393 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A76669EF2AC7317E005FE393 /* Localizable.strings */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +200,7 @@
 				A714E66C2AC5CE85006C139D /* Frameworks */,
 				A714E66D2AC5CE85006C139D /* Resources */,
 				A714E69B2AC5CF7F006C139D /* Embed Foundation Extensions */,
-				A74393B52AC6CDBF000A5682 /* CopyFiles */,
+				A74393B52AC6CDBF000A5682 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -248,6 +254,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = A714E6662AC5CE85006C139D;
 			productRefGroup = A714E6702AC5CE86006C139D /* Products */;
@@ -265,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76669EC2AC7317E005FE393 /* Localizable.strings in Resources */,
 				A714E67A2AC5CE87006C139D /* Preview Assets.xcassets in Resources */,
 				A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 				A714E6772AC5CE87006C139D /* Assets.xcassets in Resources */,
@@ -277,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714E6902AC5CF7F006C139D /* Assets.xcassets in Resources */,
+				A76669ED2AC7317E005FE393 /* Localizable.strings in Resources */,
 				A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */,
 				A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 			);
@@ -314,6 +323,18 @@
 			targetProxy = A714E6952AC5CF7F006C139D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A76669EF2AC7317E005FE393 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A76669EE2AC7317E005FE393 /* en */,
+				A76669F02AC73184005FE393 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A714E67C2AC5CE87006C139D /* Debug */ = {
@@ -370,6 +391,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Samsung Pinger";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -423,6 +445,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Samsung Pinger";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -435,10 +458,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "samsung-pinger/samsung_pinger.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"samsung-pinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -450,7 +474,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.hloth.samsung-pinger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -464,10 +489,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "samsung-pinger/samsung_pinger.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"samsung-pinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -479,7 +505,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.hloth.samsung-pinger";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -494,10 +521,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Samsung Pinger";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -505,7 +532,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.hloth.samsung-pinger.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -521,10 +548,10 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = widget/widget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = widget;
+				INFOPLIST_KEY_CFBundleDisplayName = "Samsung Pinger";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -532,7 +559,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.hloth.samsung-pinger.widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

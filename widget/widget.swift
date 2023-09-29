@@ -11,7 +11,7 @@ import Intents
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(/*date: Date(), configuration: ConfigurationIntent()*/)
+        SimpleEntry()
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
@@ -20,20 +20,6 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-//        var entries: [SimpleEntry] = []
-//
-//        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-//        let currentDate = Date()
-//        for hourOffset in 0 ..< 5 {
-//            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-//            let entry = SimpleEntry(date: entryDate, configuration: configuration)
-//            entries.append(entry)
-//        }
-//
-//        let timeline = Timeline(entries: entries, policy: .atEnd)
-//        completion(timeline)
-        
-//        let entryDate = Date()
         let entry = SimpleEntry(/*date: entryDate*/)
         let timeline = Timeline(entries: [entry], policy: .never)
         completion(timeline)
@@ -54,10 +40,9 @@ struct widgetEntryView : View {
                 .fill(Color.black)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Ring my Samsung")
+                Text("Ring my\nSamsung")
                     .foregroundColor(Color.white)
-                    .font(.custom("Samsung Sharp Sans", size: 20))
-                    .fontWeight(.bold)
+                    .font(.custom("Samsung Sharp Sans", size: 20).weight(.bold))
             }
         }
         .widgetURL(URL(string: "samsung-pinger-widget://ring"))

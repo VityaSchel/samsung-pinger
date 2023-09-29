@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  samsung-pinger
+
+  Created by Виктор Щелочков on 29.09.2023.
+  
+*/
+
+"settings_label" = "Чтобы пинговать ваше устройство, этому виджеты нужны токены SmartThingsFind и Device ID. Эти данные никогда не покидают ваш компьютер и никому не передаются. Узнайте больше на ";
+"instructions_label" = "Узнайте, как получить значения ниже:";
+"instructions_link" = "Инструкция";
+"settings_field_ping_text" = "Текст на экране (необязательно):";
+"settings_field_ping_placeholder" = "Samsung Pinger звонит на этот телефон!";
+"saved_successfully_message" = "Успешно сохранено!";
+"validation_error_message" = "Ошибка валидации";
+"required_field_error" = " это обязательное поле. Если вы не знаете, где найти это значение, пожалуйста, обратитесь к инструкции в README.md на GitHub";
+"device_id_validation_error" = "Device ID может состоять только из цифр";
+"ringing_view_connecting" = "Подключение...";
+"ringing_view_ringing" = "Звонок на устройство...";
+"error" = "Ошибка";
+"save_button" = "Сохранить";

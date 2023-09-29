@@ -4,13 +4,6 @@
 <dict>
 	<key>ATSApplicationFontsPath</key>
 	<string>Shared/fonts/</string>
-	<key>CFBundleDisplayName</key>
-	<string>Samsung Pinger</string>
-	<key>NSExtension</key>
-	<dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.widgetkit-extension</string>
-	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -22,9 +15,15 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier</key>
+		<string>com.apple.widgetkit-extension</string>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>samsungsharpsans-bold.otf</string>
+		<string>Shared/fonts/samsungsharpsans-bold.otf</string>
+		<string>Shared/fonts/samsungsharpsans-medium.otf</string>
 	</array>
 </dict>
 </plist>

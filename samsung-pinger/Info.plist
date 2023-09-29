@@ -3,12 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>ATSApplicationFontsPath</key>
-	<string>Shared/fonts/</string>
+	<string>fonts/</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>samsungsharpsans-bold.otf</string>
 		<string>samsungsharpsans-medium.otf</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Samsung Pinger</string>
+	<key>CFBundleName</key>
+	<string>Samsung Pinger</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

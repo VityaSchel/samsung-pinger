@@ -11,6 +11,10 @@ struct RingingView: View {
     @Binding var showAlert: Bool
     @Binding var alertMessage: String
     @Binding var ringState: String
+    
+    var setupCompleted: Bool {
+        return ringState != "incomplete-setup"
+    }
 
     var body: some View {
         ZStack {
@@ -24,17 +28,27 @@ struct RingingView: View {
 //                .offset(y: 20)
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                Text(ringState == "connecting" ? "Connecting..." : "Ringing your Samsung device...")
-                    .foregroundColor(Color.white)
-                    .font(.custom("Samsung Sharp Sans", size: 20))
-                    .fontWeight(Font.Weight.medium)
+            if setupCompleted {
+                VStack {
+                    Text(ringState == "connecting" ? "ringing_view_connecting" : "ringing_view_ringing")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Samsung Sharp Sans", size: 20).weight(.medium))
+                }
+            } else {
+                VStack {
+                    Text("Samsung Pinger is not configured")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Samsung Sharp Sans", size: 20).weight(.medium))
+                    Text("To be able to ring your device, Samsung Pinger must be configured from within app's settings, that can be found when launching the app manually.")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Samsung Sharp Sans", size: 20).weight(.medium))
+                }
             }
         }
         .frame(width: 400, height: 300)
         .alert(isPresented: $showAlert) {
             Alert(
-                title: Text("Error"),
+                title: Text("error"),
                 message: Text(alertMessage),
                 dismissButton: .default(Text("OK"))
             )
