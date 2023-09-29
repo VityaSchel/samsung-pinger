@@ -15,37 +15,28 @@ class WindowState: ObservableObject {
 
 @main
 struct samsung_pingerApp: App {
-    @State private var windowStateMap: [UUID: WindowState] = [:]
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
-          MainView(windowStateMap: $windowStateMap)
+          MainView()
         }
         .windowResizability(.contentSize)
       }
 }
 
 struct MainView: View {
+    @StateObject private var state = WindowState()
+    
     @State private var ringAction: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     @State private var ringState: String = ""
-    let windowId: UUID
-    @StateObject private var s = WindowState()
-    @Binding private var windowStateMap: [UUID: WindowState]
-    
-    init(windowStateMap: Binding<[UUID: WindowState]>) {
-        self.windowId = UUID()
-        self._windowStateMap = windowStateMap
-      }
     
     var body: some View {
-        let windowState = WindowState()
-        
       Group {
-          if !(s.ringAction) {
-            ContentView(windowState: windowState)
+          if !(state.ringAction) {
+            ContentView()
                 .frame(width: 400)
                 .fixedSize()
                 .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
@@ -54,7 +45,7 @@ struct MainView: View {
                     }
                 })
         } else {
-            RingingView(windowState: windowState, showAlert: $showAlert, alertMessage: $alertMessage, ringState: $ringState)
+            RingingView(showAlert: $showAlert, alertMessage: $alertMessage, ringState: $ringState)
                 .frame(width: 400, height: 300)
                 .fixedSize()
 //                        .onAppear {
@@ -65,20 +56,13 @@ struct MainView: View {
                         window.standardWindowButton(.zoomButton)?.isEnabled = false
                     }
                 })
-                .onDisappear {
-                    NSApplication.shared.terminate(self)
-                  }
                 .onAppear {
                     ring()
                 }
         }
       }
-      .onAppear {
-        windowStateMap[windowId] = windowState
-      }
       .onOpenURL { url in
-          handle(url: url, windowId: windowId)
-          print(windowStateMap, url, windowId, self._windowStateMap)
+          handle(url: url)
       }
     }
 
@@ -87,10 +71,10 @@ struct MainView: View {
        // Logic to decide what to do with a new window
      }
     
-    private func handle(url: URL, windowId: UUID) {
+    private func handle(url: URL) {
         if url.absoluteString == "samsung-pinger-widget://ring" {
             
-            s.ringAction = true
+            state.ringAction = true
         }
     }
     
@@ -130,10 +114,12 @@ struct MainView: View {
                 let cookies = "WMONID=\(UserDefaults.standard.string(forKey: "wmonID") ?? ""); JSESSIONID=\(UserDefaults.standard.string(forKey: "jsessionID") ?? "")"
                 request.setValue(cookies, forHTTPHeaderField: "Cookie")
                 
+                let lockMessage = UserDefaults.standard.string(forKey: "pingText")
+                
                 let operationData = [
                     "dvceId": UserDefaults.standard.string(forKey: "deviceID") ?? "",
                     "operation": "RING",
-                    "lockMessage": UserDefaults.standard.string(forKey: "pingText") ?? "",
+                    "lockMessage": (lockMessage?.isEmpty ?? true) ? "Samsung Pinger is ringing this phone!" : lockMessage!,
                     "status": "start"
                 ]
                 

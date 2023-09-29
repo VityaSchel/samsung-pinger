@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var windowState: WindowState
-    
     @State private var jsessionID: String = UserDefaults.standard.string(forKey: "jsessionID") ?? ""
     @State private var wmonID: String = UserDefaults.standard.string(forKey: "wmonID") ?? ""
     @State private var deviceID: String = UserDefaults.standard.string(forKey: "deviceID") ?? ""
@@ -120,7 +118,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(windowState: WindowState())
+        ContentView()
     }
 }
 

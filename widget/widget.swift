@@ -56,7 +56,8 @@ struct widgetEntryView : View {
             VStack {
                 Text("Ring my Samsung")
                     .foregroundColor(Color.white)
-                    .font(.title)
+                    .font(.custom("Samsung Sharp Sans", size: 20))
+                    .fontWeight(.bold)
             }
         }
         .widgetURL(URL(string: "samsung-pinger-widget://ring"))
