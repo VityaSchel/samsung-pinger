@@ -18,6 +18,13 @@
 		A714E6932AC5CF7F006C139D /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A714E68E2AC5CF7D006C139D /* widget.intentdefinition */; };
 		A714E6942AC5CF7F006C139D /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A714E68E2AC5CF7D006C139D /* widget.intentdefinition */; };
 		A714E6972AC5CF7F006C139D /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A714E6852AC5CF7D006C139D /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A74393A62AC6C174000A5682 /* RingingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74393A52AC6C174000A5682 /* RingingView.swift */; };
+		A74393AD2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
+		A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
+		A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
+		A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
+		A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
+		A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +49,17 @@
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A74393B52AC6CDBF000A5682 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in CopyFiles */,
+				A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +77,10 @@
 		A714E68F2AC5CF7F006C139D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A714E6912AC5CF7F006C139D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A714E6922AC5CF7F006C139D /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
+		A74393A52AC6C174000A5682 /* RingingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingView.swift; sourceTree = "<group>"; };
+		A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-bold.otf"; sourceTree = "<group>"; };
+		A74393B02AC6CAEF000A5682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +106,7 @@
 		A714E6662AC5CE85006C139D = {
 			isa = PBXGroup;
 			children = (
+				A74393AA2AC6C43E000A5682 /* Shared */,
 				A714E6712AC5CE86006C139D /* samsung-pinger */,
 				A714E68B2AC5CF7D006C139D /* widget */,
 				A714E6862AC5CF7D006C139D /* Frameworks */,
@@ -103,8 +126,10 @@
 		A714E6712AC5CE86006C139D /* samsung-pinger */ = {
 			isa = PBXGroup;
 			children = (
+				A74393B02AC6CAEF000A5682 /* Info.plist */,
 				A714E6722AC5CE86006C139D /* samsung_pingerApp.swift */,
 				A714E6742AC5CE86006C139D /* ContentView.swift */,
+				A74393A52AC6C174000A5682 /* RingingView.swift */,
 				A714E6762AC5CE87006C139D /* Assets.xcassets */,
 				A714E67B2AC5CE87006C139D /* samsung_pinger.entitlements */,
 				A714E6782AC5CE87006C139D /* Preview Content */,
@@ -141,6 +166,23 @@
 			path = widget;
 			sourceTree = "<group>";
 		};
+		A74393AA2AC6C43E000A5682 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A74393AB2AC6C443000A5682 /* fonts */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A74393AB2AC6C443000A5682 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */,
+				A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +194,7 @@
 				A714E66C2AC5CE85006C139D /* Frameworks */,
 				A714E66D2AC5CE85006C139D /* Resources */,
 				A714E69B2AC5CF7F006C139D /* Embed Foundation Extensions */,
+				A74393B52AC6CDBF000A5682 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -223,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714E67A2AC5CE87006C139D /* Preview Assets.xcassets in Resources */,
+				A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 				A714E6772AC5CE87006C139D /* Assets.xcassets in Resources */,
+				A74393AD2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +277,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714E6902AC5CF7F006C139D /* Assets.xcassets in Resources */,
+				A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */,
+				A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714E6942AC5CF7F006C139D /* widget.intentdefinition in Sources */,
+				A74393A62AC6C174000A5682 /* RingingView.swift in Sources */,
 				A714E6752AC5CE86006C139D /* ContentView.swift in Sources */,
 				A714E6732AC5CE86006C139D /* samsung_pingerApp.swift in Sources */,
 			);
@@ -394,6 +442,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"samsung-pinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "samsung-pinger/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Samsung Pinger";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -422,6 +471,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"samsung-pinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "samsung-pinger/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Samsung Pinger";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

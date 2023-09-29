@@ -70,12 +70,12 @@ struct ContentView: View {
                         .foregroundColor(.green)
                 }
             }
-            }
-            .padding()
-            .frame(width: 400, alignment: .leading)
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Validation Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
-            }
+        }
+        .padding()
+        .frame(width: 400, alignment: .leading)
+        .alert(isPresented: $showAlert) {
+            Alert(title: Text("Validation Error"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+        }
     }
     
     func saveFields() {
@@ -123,8 +123,9 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 func field(title: String, placeholder: String = "", text: Binding<String>) -> some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .leading, spacing: 5) {
         Text(title).fontWeight(.semibold)
         TextField(placeholder, text: text)
     }
+    .padding(.bottom, 5)
 }
