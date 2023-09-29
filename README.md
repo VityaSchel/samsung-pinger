@@ -1,16 +1,16 @@
-# samsung-pinger
+# Samsung Pinger
 
 Samsung Pinger is a MacOS widget that lets you quickly ring your Samsung device.
 
 ![Widget Gallery Screenshot](./docs/preview-widget-gallery.png)
 
-## How it works
+Simply open notification center, click on the widget and your Samsung phone will ring even if it's in silent mode for one minute!
 
-You open notification center, click on widget and 1 second later your phone rings!
+[Download](https://github.com/vityaschel/samsung-pinger/releases)
 
 ## Setup
 
-you absolutely can do this! I believe in you! it takes less than 1 minute :)
+you absolutely can do this! I believe in you! it takes less than a minute :)
 
 ![Screnshot](./docs/preview-screenshot.png)
 
@@ -28,3 +28,7 @@ you absolutely can do this! I believe in you! it takes less than 1 minute :)
 ## Under the hood
 
 Read [my notes](https://gist.github.com/VityaSchel/fe8945c0189bbaabed420003bdf3216d) on reverse-engineering smartthingsfind website.
+
+## Hire me!
+
+I'm available for hire if you can provide me with a work visa in Canada. Check out my resume: [cv.hloth.dev](https://cv.hloth.dev).

@@ -49,9 +49,24 @@ struct widgetEntryView : View {
     }
 }
 
+func registerCustomFont(fileName: String, withExtension fileExtension: String) {
+  guard let fontURL = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {
+    print("Failed to find font URL for \(fileName).\(fileExtension)")
+    return
+  }
+
+  CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+}
+
+
 @main
 struct widget: Widget {
     let kind: String = "widget"
+    
+    init() {
+        registerCustomFont(fileName: "samsungsharpsans-bold", withExtension: "ttf")
+        registerCustomFont(fileName: "samsungsharpsans-medium", withExtension: "otf")
+      }
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
