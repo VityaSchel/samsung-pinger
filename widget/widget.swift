@@ -40,7 +40,7 @@ struct widgetEntryView : View {
                 .fill(Color.black)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Text("Ring my\nSamsung")
+                Text("ring_my_samsung")
                     .foregroundColor(Color.white)
                     .font(.custom("Samsung Sharp Sans", size: 20).weight(.bold))
             }
@@ -72,8 +72,8 @@ struct widget: Widget {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             widgetEntryView(entry: entry)
         }
-        .configurationDisplayName("Samsung Pinger Widget")
-        .description("Ping your Samsung device")
+        .configurationDisplayName(NSLocalizedString("widget_name", comment: "Samsung Pinger Widget"))
+        .description(NSLocalizedString("widget_description", comment: "Ping your Samsung device"))
         .supportedFamilies([.systemSmall])
     }
 }

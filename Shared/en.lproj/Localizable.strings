@@ -19,3 +19,6 @@
 "ringing_view_ringing" = "Ringing your Samsung device...";
 "error" = "Error";
 "save_button" = "Save";
+"ring_my_samsung" = "Ring my\nSamsung";
+"widget_name" = "Samsung Pinger Widget";
+"widget_description" = "Ping your Samsung device";

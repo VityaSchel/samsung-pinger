@@ -19,3 +19,6 @@
 "ringing_view_ringing" = "Звонок на устройство...";
 "error" = "Ошибка";
 "save_button" = "Сохранить";
+"ring_my_samsung" = "Найти мой\nSamsung";
+"widget_name" = "Виджет Samsung Pinger";
+"widget_description" = "Пингуйте ваше устройство Samsung";

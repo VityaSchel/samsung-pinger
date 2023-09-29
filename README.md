@@ -8,6 +8,8 @@ Simply open notification center, click on the widget and your Samsung phone will
 
 [Download](https://github.com/vityaschel/samsung-pinger/releases)
 
+🇷🇺 Fully localized both in Russian and English languages.
+
 ## Setup
 
 you absolutely can do this! I believe in you! it takes less than a minute :)
