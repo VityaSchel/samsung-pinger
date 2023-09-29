@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ATSApplicationFontsPath</key>
-	<string>Shared/fonts/</string>
+	<string>fonts/</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -22,8 +22,8 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Shared/fonts/samsungsharpsans-bold.otf</string>
-		<string>Shared/fonts/samsungsharpsans-medium.otf</string>
+		<string>samsungsharpsans-bold.ttf</string>
+		<string>samsungsharpsans-medium.otf</string>
 	</array>
 </dict>
 </plist>

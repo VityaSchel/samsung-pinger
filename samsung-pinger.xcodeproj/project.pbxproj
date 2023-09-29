@@ -19,14 +19,14 @@
 		A714E6942AC5CF7F006C139D /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A714E68E2AC5CF7D006C139D /* widget.intentdefinition */; };
 		A714E6972AC5CF7F006C139D /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A714E6852AC5CF7D006C139D /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A74393A62AC6C174000A5682 /* RingingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74393A52AC6C174000A5682 /* RingingView.swift */; };
-		A74393AD2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
-		A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
 		A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
 		A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
-		A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in Copy Files */ = {isa = PBXBuildFile; fileRef = A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */; };
 		A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in Copy Files */ = {isa = PBXBuildFile; fileRef = A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */; };
 		A76669EC2AC7317E005FE393 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76669EF2AC7317E005FE393 /* Localizable.strings */; };
 		A76669ED2AC7317E005FE393 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A76669EF2AC7317E005FE393 /* Localizable.strings */; };
+		A7B594A02AC73E0D00F6E019 /* samsungsharpsans-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B5949F2AC73E0D00F6E019 /* samsungsharpsans-bold.ttf */; };
+		A7B594A12AC73E0D00F6E019 /* samsungsharpsans-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7B5949F2AC73E0D00F6E019 /* samsungsharpsans-bold.ttf */; };
+		A7B594A22AC73E3300F6E019 /* samsungsharpsans-bold.ttf in Copy Files */ = {isa = PBXBuildFile; fileRef = A7B5949F2AC73E0D00F6E019 /* samsungsharpsans-bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +57,8 @@
 			dstPath = Fonts;
 			dstSubfolderSpec = 7;
 			files = (
+				A7B594A22AC73E3300F6E019 /* samsungsharpsans-bold.ttf in Copy Files */,
 				A74393B72AC6CDD2000A5682 /* samsungsharpsans-medium.otf in Copy Files */,
-				A74393B62AC6CDD0000A5682 /* samsungsharpsans-bold.otf in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,11 +81,11 @@
 		A714E6912AC5CF7F006C139D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A714E6922AC5CF7F006C139D /* widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widget.entitlements; sourceTree = "<group>"; };
 		A74393A52AC6C174000A5682 /* RingingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingingView.swift; sourceTree = "<group>"; };
-		A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-bold.otf"; sourceTree = "<group>"; };
 		A74393B02AC6CAEF000A5682 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-medium.otf"; sourceTree = "<group>"; };
 		A76669EE2AC7317E005FE393 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A76669F02AC73184005FE393 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A7B5949F2AC73E0D00F6E019 /* samsungsharpsans-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "samsungsharpsans-bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,7 +136,6 @@
 				A714E6742AC5CE86006C139D /* ContentView.swift */,
 				A74393A52AC6C174000A5682 /* RingingView.swift */,
 				A714E6762AC5CE87006C139D /* Assets.xcassets */,
-				A74393AB2AC6C443000A5682 /* fonts */,
 				A714E67B2AC5CE87006C139D /* samsung_pinger.entitlements */,
 				A714E6782AC5CE87006C139D /* Preview Content */,
 			);
@@ -175,7 +174,7 @@
 		A74393AB2AC6C443000A5682 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A74393AC2AC6C487000A5682 /* samsungsharpsans-bold.otf */,
+				A7B5949F2AC73E0D00F6E019 /* samsungsharpsans-bold.ttf */,
 				A74393B12AC6CBAD000A5682 /* samsungsharpsans-medium.otf */,
 			);
 			path = fonts;
@@ -184,6 +183,7 @@
 		A76669EA2AC73083005FE393 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A74393AB2AC6C443000A5682 /* fonts */,
 				A76669EF2AC7317E005FE393 /* Localizable.strings */,
 			);
 			path = Shared;
@@ -253,8 +253,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				ru,
+				Base,
 			);
 			mainGroup = A714E6662AC5CE85006C139D;
 			productRefGroup = A714E6702AC5CE86006C139D /* Products */;
@@ -276,7 +276,7 @@
 				A714E67A2AC5CE87006C139D /* Preview Assets.xcassets in Resources */,
 				A74393B22AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 				A714E6772AC5CE87006C139D /* Assets.xcassets in Resources */,
-				A74393AD2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */,
+				A7B594A02AC73E0D00F6E019 /* samsungsharpsans-bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A714E6902AC5CF7F006C139D /* Assets.xcassets in Resources */,
+				A7B594A12AC73E0D00F6E019 /* samsungsharpsans-bold.ttf in Resources */,
 				A76669ED2AC7317E005FE393 /* Localizable.strings in Resources */,
-				A74393AE2AC6C487000A5682 /* samsungsharpsans-bold.otf in Resources */,
 				A74393B32AC6CBAD000A5682 /* samsungsharpsans-medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

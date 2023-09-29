@@ -38,6 +38,7 @@ struct ContentView: View {
             .padding(.bottom, 20)
             HStack {
                 Text("instructions_label")
+//                    .font(.custom("Samsung Sharp Sans", size: 20).weight(.bold))
                     .fontWeight(.bold)
                 Button(action: {
                     if let url = URL(string: "https://github.com/vityaschel/samsung-pinger#setup") {

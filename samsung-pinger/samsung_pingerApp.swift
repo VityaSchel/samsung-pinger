@@ -28,7 +28,7 @@ struct samsung_pingerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     init() {
-        registerCustomFont(fileName: "samsungsharpsans-bold", withExtension: "otf")
+        registerCustomFont(fileName: "samsungsharpsans-bold", withExtension: "ttf")
         registerCustomFont(fileName: "samsungsharpsans-medium", withExtension: "otf")
       }
     

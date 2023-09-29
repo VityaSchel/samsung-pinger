@@ -32,7 +32,7 @@ struct RingingView: View {
                 VStack {
                     Text(ringState == "connecting" ? "ringing_view_connecting" : "ringing_view_ringing")
                         .foregroundColor(Color.white)
-                        .font(.custom("Samsung Sharp Sans", size: 20).weight(.medium))
+                        .font(.custom("Samsung Sharp Sans", size: 20).weight(Locale.current.languageCode == "ru" ? .bold : .medium))
                 }
             } else {
                 VStack {

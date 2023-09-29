@@ -6,7 +6,7 @@
 	<string>fonts/</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>samsungsharpsans-bold.otf</string>
+		<string>samsungsharpsans-bold.ttf</string>
 		<string>samsungsharpsans-medium.otf</string>
 	</array>
 	<key>CFBundleDisplayName</key>
