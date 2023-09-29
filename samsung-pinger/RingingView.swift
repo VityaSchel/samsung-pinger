@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RingingView: View {
+    @ObservedObject var windowState: WindowState
+    
     @Binding var showAlert: Bool
     @Binding var alertMessage: String
     @Binding var ringState: String
@@ -53,7 +55,7 @@ struct RingingView_Previews: PreviewProvider {
         @State private var ringState = "ringing"
 
         var body: some View {
-            RingingView(showAlert: $isShowingAlert, alertMessage: $alertMessage, ringState: $ringState)
+            RingingView(windowState: WindowState(), showAlert: $isShowingAlert, alertMessage: $alertMessage, ringState: $ringState)
         }
     }
 }

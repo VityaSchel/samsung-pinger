@@ -7,63 +7,90 @@
 
 import SwiftUI
 import Foundation
+import AppKit
+
+class WindowState: ObservableObject {
+  @Published var ringAction: Bool = false
+}
 
 @main
 struct samsung_pingerApp: App {
+    @State private var windowStateMap: [UUID: WindowState] = [:]
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    var body: some Scene {
+        WindowGroup {
+          MainView(windowStateMap: $windowStateMap)
+        }
+        .windowResizability(.contentSize)
+      }
+}
+
+struct MainView: View {
     @State private var ringAction: Bool = false
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
     @State private var ringState: String = ""
+    let windowId: UUID
+    @StateObject private var s = WindowState()
+    @Binding private var windowStateMap: [UUID: WindowState]
     
-    var body: some Scene {
-        WindowGroup {
-            Group {
-                if !ringAction {
-                    ContentView()
-                        .frame(width: 400)
-                        .fixedSize()
-//                        .onAppear {
-//                          setTitleBarVisible(true)
-//                        }
-                        .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                            for window in NSApplication.shared.windows {
-                                window.standardWindowButton(.zoomButton)?.isEnabled = false
-                            }
-                        })
-//                        .onDisappear {
-//                            NSApplication.shared.terminate(self)
-//                          }
-                } else {
-                    RingingView(showAlert: $showAlert, alertMessage: $alertMessage, ringState: $ringState)
-                        .frame(width: 400, height: 300)
-                        .fixedSize()
+    init(windowStateMap: Binding<[UUID: WindowState]>) {
+        self.windowId = UUID()
+        self._windowStateMap = windowStateMap
+      }
+    
+    var body: some View {
+        let windowState = WindowState()
+        
+      Group {
+          if !(s.ringAction) {
+            ContentView(windowState: windowState)
+                .frame(width: 400)
+                .fixedSize()
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+                    for window in NSApplication.shared.windows {
+                        window.standardWindowButton(.zoomButton)?.isEnabled = false
+                    }
+                })
+        } else {
+            RingingView(windowState: windowState, showAlert: $showAlert, alertMessage: $alertMessage, ringState: $ringState)
+                .frame(width: 400, height: 300)
+                .fixedSize()
 //                        .onAppear {
 //                          setTitleBarVisible(false)
 //                        }
-                        .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-                            for window in NSApplication.shared.windows {
-                                window.standardWindowButton(.zoomButton)?.isEnabled = false
-                            }
-                        })
-                        .onDisappear {
-                            NSApplication.shared.terminate(self)
-                          }
-                        .onAppear {
-                            ring()
-                        }
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+                    for window in NSApplication.shared.windows {
+                        window.standardWindowButton(.zoomButton)?.isEnabled = false
+                    }
+                })
+                .onDisappear {
+                    NSApplication.shared.terminate(self)
+                  }
+                .onAppear {
+                    ring()
                 }
-            }
-            .onOpenURL { url in
-                handle(url: url)
-            }
         }
-        .windowResizability(.contentSize)
+      }
+      .onAppear {
+        windowStateMap[windowId] = windowState
+      }
+      .onOpenURL { url in
+          handle(url: url, windowId: windowId)
+          print(windowStateMap, url, windowId, self._windowStateMap)
+      }
     }
+
     
-    private func handle(url: URL) {
+    private func handleNewWindow(id: UUID) {
+       // Logic to decide what to do with a new window
+     }
+    
+    private func handle(url: URL, windowId: UUID) {
         if url.absoluteString == "samsung-pinger-widget://ring" {
             
-            ringAction = true
+            s.ringAction = true
         }
     }
     
@@ -128,5 +155,11 @@ struct samsung_pingerApp: App {
         }
 
         task.resume()
+    }
+}
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
     }
 }
