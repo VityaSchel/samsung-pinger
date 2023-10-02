@@ -10,6 +10,11 @@ Simply open notification center, click on the widget and your Samsung phone will
 
 🇷🇺 Fully localized both in Russian and English languages.
 
+## Table of contents:
+- [Setup](#setup)
+  - [Automatically obtain WMONID and JSESSIONID](#automatically-obtain-wmonid-and-jsessionid)
+- [Under the hood](#under-the-hood)
+
 ## Setup
 
 you absolutely can do this! I believe in you! it takes less than a minute :)
@@ -26,6 +31,19 @@ you absolutely can do this! I believe in you! it takes less than a minute :)
 8. Go to "Network" tab in devtools, type "getDeviceList" in Filter field, click on the last (and usually the only) item in list
 9. Go to "Response" tab in the opened submenu ![Screenshot](./docs/setup-6.png)
 10. Here is a list of all your devices in JSON format. Find the right one (that you want to ping) in this list. Near it's name you will find (`modelName`) — this is called a "property" in JSON format. Locate nearest `dvceID` property in this brackets as shown on screenshot and fill it in the corresponding field. ![Screenshot](./docs/setup-7.png)
+
+### Automatically obtain WMONID and JSESSIONID
+
+**Do you know JavaScript? Use my node.js script to obtain WMONID and JSESSIONID automatically**
+```js
+import chrome from 'chrome-cookies-secure'
+
+chrome.getCookies('https://smartthingsfind.samsung.com/', function(err, cookies) {
+  console.log('WMONID=', cookies['WMONID'])
+  console.log('JSESSIONID=', cookies['JSESSIONID'])
+})
+```
+Simply install [chrome-cookies-secure](https://github.com/bertrandom/chrome-cookies-secure), paste the script above into index.js file, run it with `node index.js` and allow it to use macOS Keychain
 
 ## Under the hood
 
